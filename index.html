@@ -44,7 +44,7 @@
       <div class="text-center">
         <img src="img/1716038783085.jpg" alt="INDRA BAYU SEPTI" width="200" class="rounded-circle img-thumbnail" />
         <h1 class="display-4">INDRA BAYU SEPTI</h1>
-        <p class="lead">Fresh Graduate | Junior Proggramer | Front-End Developer</p>
+        <p class="lead"></p>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
@@ -58,7 +58,7 @@
 
     <!-- About -->
     <section id="about">
-      <div class="container-md">
+      <div class="container">
         <div class="row text-center mb-3">
           <div class="col" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
             <h2>About Me</h2>
@@ -107,7 +107,7 @@
             <div class="card" data-aos="flip-right" data-aos-delay="200" data-aos-duration="2000">
               <img src="img/noimg.jpg" class="card-img-top" alt="projects 1" />
               <div class="card-body">
-                <p class="card-text">Cooming soon...</p>
+                <p class="card-text">Comming soon...</p>
               </div>
             </div>
           </div>
@@ -176,9 +176,28 @@
     <!-- AOS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      AOS.init();
+      AOS.init({
+        offset: 230,
+      });
     </script>
     <!-- Akhir AOS -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+
+      gsap.from(".navbar", { duration: 1, y: "-100%", opacity: 0 });
+      gsap.from(".display-4", { duration: 1, delay: 0.5, x: -50, opacity: 0, ease: "back" });
+      gsap.from(".jumbotron img", { duration: 1.5, rotateY: 440, opacity: 0 });
+
+      //replaces yourElement's text with "This is the new text"
+      gsap.to(".lead", {
+        duration: 2,
+        delay: 1.2,
+        text: "Fresh Graduate | Junior Proggramer | Front-End Developer",
+        ease: "none",
+      });
+    </script>
     <script>
       const scriptURL = "https://script.google.com/macros/s/AKfycbzA_As3dBxhqhG_hvT-Vpdi6vqb0yVcOW6GOzkbAc4pzvpq-TFC3lAn0jk2UVsYtKdV/exec";
       const form = document.forms["contact-form"];
